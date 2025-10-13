@@ -1,15 +1,20 @@
-use pinocchio::{account_info::AccountInfo, entrypoint, pubkey::Pubkey, ProgramResult};
+use pinocchio::{
+    account::AccountView, no_allocator, nostd_panic_handler, program_entrypoint, Address,
+    ProgramResult,
+};
 //use pinocchio::program_error::ProgramError;
 //use pinocchio_log::log;
 //use pinocchio_system::instructions::CreateAccount;
 
 // Declares the entrypoint of the program.
-entrypoint!(process_instruction);
+program_entrypoint!(process_instruction);
+nostd_panic_handler!();
+no_allocator!();
 
 /// Instruction processor
 pub fn process_instruction(
-    _program_id: &Pubkey,
-    _accounts: &[AccountInfo],
+    _program_id: &Address,
+    _accounts: &[AccountView],
     _instruction_data: &[u8],
 ) -> ProgramResult {
     // (1) run_accounts
