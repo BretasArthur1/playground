@@ -4,17 +4,20 @@
 .PHONY: bench
 
 # Remove the first word (the target) to get positional arguments
-ARG1 := $(word 2, $(MAKECMDGOALS))
-ARG2 := $(word 3, $(MAKECMDGOALS))
+ARG1 := $(word 2, $(MAKECMDGOALS)) # program name
+ARG2 := $(word 3, $(MAKECMDGOALS)) # bench name
 
 bench:
-	cargo bench --bench $(ARG1) -- $(ARG2)
+	@# Temporarily move .cargo to avoid using local config during benchmarks
+	@mv .cargo .cargo-temp
+	cargo +nightly bench --bench $(ARG1) -- $(ARG2)
+	@mv .cargo-temp .cargo
 
 # Build the program.
 .PHONY: build
 build:
-	cargo build-sbf --manifest-path programs/pinocchio/Cargo.toml --tools-version v1.51
-	RUSTFLAGS="-C embed-bitcode=yes -C lto=fat" cargo build-sbf --manifest-path programs/sdk/Cargo.toml --tools-version v1.51
+	cargo build-bpf --manifest-path programs/pinocchio/Cargo.toml
+	@# RUSTFLAGS="-C embed-bitcode=yes -C lto=fat" cargo build-sbf --manifest-path programs/sdk/Cargo.toml --tools-version v1.51
 
 # Run `cargo clean`.
 .PHONY: clean
