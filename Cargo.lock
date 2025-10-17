@@ -1712,7 +1712,7 @@ dependencies = [
 [[package]]
 name = "pinocchio"
 version = "0.9.1"
-source = "git+https://github.com/anza-xyz/pinocchio.git?branch=febo%2Fupstream-bpf#23cf75a6935fbe576a82980c237434d8b41635ef"
+source = "git+https://github.com/anza-xyz/pinocchio.git?branch=febo%2Fupstream-bpf#1ec1ca569123ee117b364d97f26b111ea362345f"
 dependencies = [
  "solana-account-view",
  "solana-address 1.0.0 (git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf)",
@@ -1723,7 +1723,7 @@ dependencies = [
 [[package]]
 name = "pinocchio-system"
 version = "0.3.0"
-source = "git+https://github.com/anza-xyz/pinocchio.git?branch=febo%2Fupstream-bpf#23cf75a6935fbe576a82980c237434d8b41635ef"
+source = "git+https://github.com/anza-xyz/pinocchio.git?branch=febo%2Fupstream-bpf#1ec1ca569123ee117b364d97f26b111ea362345f"
 dependencies = [
  "pinocchio 0.9.1",
  "solana-account-view",
@@ -2341,7 +2341,7 @@ dependencies = [
 [[package]]
 name = "solana-account-view"
 version = "0.0.0"
-source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#92969f75cf8db5b764fd4555a21651e6550e678c"
+source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#0b2b506b1d29089fc91a556e66ec55ab4e3a4e6c"
 dependencies = [
  "solana-address 1.0.0 (git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf)",
  "solana-program-error 3.0.0 (git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf)",
@@ -2367,7 +2367,7 @@ dependencies = [
 [[package]]
 name = "solana-address"
 version = "1.0.0"
-source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#92969f75cf8db5b764fd4555a21651e6550e678c"
+source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#0b2b506b1d29089fc91a556e66ec55ab4e3a4e6c"
 dependencies = [
  "five8 1.0.0",
  "five8_const 1.0.0",
@@ -2587,7 +2587,7 @@ checksum = "f9697086a4e102d28a156b8d6b521730335d6951bd39a5e766512bbe09007cee"
 [[package]]
 name = "solana-define-syscall"
 version = "3.0.0"
-source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#92969f75cf8db5b764fd4555a21651e6550e678c"
+source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#0b2b506b1d29089fc91a556e66ec55ab4e3a4e6c"
 
 [[package]]
 name = "solana-ed25519-program"
@@ -2737,7 +2737,7 @@ dependencies = [
 [[package]]
 name = "solana-instruction-view"
 version = "0.0.0"
-source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#92969f75cf8db5b764fd4555a21651e6550e678c"
+source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#0b2b506b1d29089fc91a556e66ec55ab4e3a4e6c"
 dependencies = [
  "solana-account-view",
  "solana-address 1.0.0 (git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf)",
@@ -3018,7 +3018,7 @@ checksum = "a1af32c995a7b692a915bb7414d5f8e838450cf7c70414e763d8abcae7b51f28"
 [[package]]
 name = "solana-program-error"
 version = "3.0.0"
-source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#92969f75cf8db5b764fd4555a21651e6550e678c"
+source = "git+https://github.com/febo/solana-sdk.git?branch=upstream-bpf#0b2b506b1d29089fc91a556e66ec55ab4e3a4e6c"
 
 [[package]]
 name = "solana-program-memory"

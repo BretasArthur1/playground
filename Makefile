@@ -8,16 +8,20 @@ ARG1 := $(word 2, $(MAKECMDGOALS)) # program name
 ARG2 := $(word 3, $(MAKECMDGOALS)) # bench name
 
 bench:
-	@# Temporarily move .cargo to avoid using local config during benchmarks
-	@mv .cargo .cargo-temp
+	@# Temporarily move .cargo to avoid using local config during benchmarks.
+	@-mv .cargo .cargo-temp 2>/dev/null
+
 	cargo +nightly bench --bench $(ARG1) -- $(ARG2)
-	@mv .cargo-temp .cargo
+
+	@-mv .cargo-temp .cargo 2>/dev/null
 
 # Build the program.
 .PHONY: build
 build:
+	@# Not great but avoid to have to manually rename .cargo each time benches fail.
+	@-mv .cargo-temp .cargo 2>/dev/null
+
 	cargo build-bpf --manifest-path programs/pinocchio/Cargo.toml
-	@# RUSTFLAGS="-C embed-bitcode=yes -C lto=fat" cargo build-sbf --manifest-path programs/sdk/Cargo.toml --tools-version v1.51
 
 # Run `cargo clean`.
 .PHONY: clean
