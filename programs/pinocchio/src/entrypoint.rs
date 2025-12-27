@@ -34,7 +34,6 @@ pub fn process_instruction(
         owner: program_id,
     }
     .invoke()
-
     // end of 2
 
     // (3) run_log

@@ -1,5 +1,5 @@
 [package]
-name = "pinocchio"
+name = "pinocchio-program"
 version = "0.1.0"
 edition = "2021"
 
@@ -13,8 +13,10 @@ check-cfg = [
 crate-type = ["cdylib"]
 
 [dependencies]
-pinocchio = { version = "0.9", default-features = false, git = "https://github.com/anza-xyz/pinocchio.git", branch = "febo/upstream-bpf" }
-pinocchio-system = { version = "0.3", git = "https://github.com/anza-xyz/pinocchio.git", branch = "febo/upstream-bpf" }
+pinocchio = { version = "0.9", default-features = false, git = "https://github.com/anza-xyz/pinocchio.git" }
+pinocchio-system = { version = "0.4", git = "https://github.com/anza-xyz/pinocchio.git" }
+# Enable static syscalls for BPF target
+solana-define-syscall = { version = "4.0.1", features = ["unstable-static-syscalls"] }
 
 [profile.release]
 opt-level = 3

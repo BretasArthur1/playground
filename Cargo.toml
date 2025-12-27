@@ -3,5 +3,4 @@ resolver = "2"
 members = [
     "tests",
     "programs/pinocchio",
-    "programs/sdk",
 ]
