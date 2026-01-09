@@ -13,10 +13,11 @@ check-cfg = [
 crate-type = ["cdylib"]
 
 [dependencies]
-pinocchio = { version = "0.9", default-features = false, git = "https://github.com/anza-xyz/pinocchio.git" }
-pinocchio-system = { version = "0.4", git = "https://github.com/anza-xyz/pinocchio.git" }
+pinocchio = { version = "0.10", default-features = false }
+pinocchio-system = "0.5"
 # Enable static syscalls for BPF target
 solana-define-syscall = { version = "4.0.1", features = ["unstable-static-syscalls"] }
+solana-program-log = "1.0"
 
 [profile.release]
 opt-level = 3

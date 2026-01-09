@@ -3,8 +3,8 @@ use pinocchio::{
     account::AccountView, no_allocator, nostd_panic_handler, program_entrypoint, Address,
     ProgramResult,
 };
-//use pinocchio_log::log;
-use pinocchio_system::instructions::CreateAccount;
+use solana_program_log::log;
+//use pinocchio_system::instructions::CreateAccount;
 
 // Declares the entrypoint of the program.
 program_entrypoint!(process_instruction);
@@ -13,7 +13,7 @@ no_allocator!();
 
 /// Instruction processor
 pub fn process_instruction(
-    program_id: &Address,
+    _program_id: &Address,
     accounts: &[AccountView],
     _instruction_data: &[u8],
 ) -> ProgramResult {
@@ -22,6 +22,7 @@ pub fn process_instruction(
     // end of 1
 
     // (2) run_cpi
+    /*
     let [from, to, _system_program] = accounts else {
         return Err(ProgramError::NotEnoughAccountKeys);
     };
@@ -34,17 +35,16 @@ pub fn process_instruction(
         owner: program_id,
     }
     .invoke()
+    */
     // end of 2
 
     // (3) run_log
-    /*
     let [account] = accounts else {
         return Err(ProgramError::NotEnoughAccountKeys);
     };
 
-    log!("lamports={}", &[account.lamports(), account.lamports()]);
+    log!("lamports={}", account.lamports());
 
     Ok(())
-    */
     // end of 3
 }
