@@ -18,9 +18,6 @@ bench:
 # Build the program.
 .PHONY: build
 build:
-	@# Not great but avoid to have to manually rename .cargo each time benches fail.
-	@-mv .cargo-temp .cargo 2>/dev/null
-
 	cargo build-bpf --manifest-path programs/pinocchio/Cargo.toml
 
 # Run `cargo clean`.

@@ -33,4 +33,9 @@ mod pinocchio {
     fn run_log(_bencher: &mut Bencher) {
         setup::run_log(&PROGRAM_ID, "libpinocchio_program");
     }
+    
+    #[bench]
+    fn run_input_vec(_bencher: &mut Bencher) {
+        setup::run_input_vec(&PROGRAM_ID, "libpinocchio_program");
+    }
 }
