@@ -3,11 +3,14 @@ build-std = ["core", "alloc"]
 
 [target.bpfel-unknown-none]
 rustflags = [
-    "-C", "linker=sbpf-linker",
-    "-C", "panic=abort",
-    "-C", "link-arg=--llvm-args=-bpf-stack-size=4096",
-    "-C", "relocation-model=static",
-    "--cfg", "feature=\"mem-unaligned\"",
+"--cfg", "feature=\"mem_unaligned\"",
+"-C", "linker=sbpf-linker",
+"-C", "panic=abort",
+"-C", "relocation-model=static",
+"-C", "link-arg=--disable-memory-builtins",
+"-C", "link-arg=--llvm-args=--bpf-stack-size=4096",
+"-C", "link-arg=--disable-expand-memcpy-in-order",
+"-C", "target-cpu=v2"
 ]
 
 [alias]

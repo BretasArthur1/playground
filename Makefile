@@ -18,7 +18,7 @@ bench:
 # Build the program.
 .PHONY: build
 build:
-	cargo build-bpf --manifest-path programs/pinocchio/Cargo.toml
+	cargo +nightly build-bpf --manifest-path programs/pinocchio/Cargo.toml
 
 # Run `cargo clean`.
 .PHONY: clean
